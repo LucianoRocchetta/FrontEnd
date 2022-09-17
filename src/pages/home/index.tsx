@@ -5,7 +5,7 @@ import { ScreenNames } from "../../shared/types";
 export const Home = () => {
   return (
     <section className="app-container">
-      <Navbar currentScreen={ScreenNames.HOME} />
+      <Navbar currentScreen= {ScreenNames}/>
       <Jumbotron />
       <main className=""></main>
     </section>

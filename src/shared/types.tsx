@@ -21,4 +21,6 @@ export interface NavbarProps {
 // TYPES
 export enum ScreenNames {
   HOME = "Home",
+  GENRES = "Genres",
+  MYLIST = "MyList",
 }
