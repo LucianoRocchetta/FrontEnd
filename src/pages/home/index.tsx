@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Jumbotron, Navbar } from "../../components/Layout";
+import { ScreenNames } from "../../shared/types";
 
 export const Home = () => {
-    return (
-        <div>Home</div>
-    )
-}
+  return (
+    <section className="app-container">
+      <Navbar currentScreen={ScreenNames.HOME} />
+      <Jumbotron />
+      <main className=""></main>
+    </section>
+  );
+};
