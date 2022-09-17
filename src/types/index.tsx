@@ -1,0 +1,1 @@
+export const machuki: string = 'hola'; 
