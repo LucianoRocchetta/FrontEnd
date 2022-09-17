@@ -1,0 +1,1 @@
+export default { machuki: 123 };
