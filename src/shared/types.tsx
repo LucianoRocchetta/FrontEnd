@@ -20,7 +20,7 @@ export interface NavbarProps {
     currentScreen: ScreenNames;
 }
 export interface GenericButtonProps {
-    label: string;
+    children?: any;
     onClick?: (e: any) => void;
     className?: string;
     style?: CSSProperties;
