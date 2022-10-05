@@ -2,48 +2,199 @@
 @import "vars";
 
 button {
-    border: 0;
-    background: $main-text-color;
+  border: 0;
+  background: $main-text-color;
 }
 
 html,
 body,
 #root {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
-    background-color: $main-bg-color;
-    color: $main-text-color;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: $main-bg-color;
+  color: $main-text-color;
+  font-family: "Poppins", sans-serif;
+}
+
+// GENERICS
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+// CAROUSEL CONFIGS
+.carousel.carousel-slider .control-arrow:hover {
+  background: inherit !important;
+}
+
+.carousel.carousel-slider .control-arrow {
+  padding-left: 0 !important;
+  width: 49px;
+}
+
+.carousel .control-arrow:before,
+.carousel.carousel-slider .control-arrow:before {
+  margin: 0 !important;
+  border: 0 !important;
+  content: none !important;
+}
+
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow {
+  opacity: 1 !important;
+}
+
+.carousel .slide img {
+  height: 635px !important;
+  object-fit: cover;
+  object-position: top;
+}
+
+.control-dots {
+  background: $main-bg-color-alpha;
+  border-radius: $border-radius-60;
+  backdrop-filter: blur($background-blur);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px !important;
+  width: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  gap: 7px;
 }
 
 /*  */
 .app-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.jumbotron-container {
-    & .jumbotron-image {
-        padding: 0;
-        margin: 0;
-        & .background-img {
-            width: 100%;
-        }
+.preset-button {
+  border-radius: $border-radius-60;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > svg {
+    width: 80%;
+    height: 80%;
+  }
+  &.play {
+    background-color: $main-text-color;
+    & > svg {
+      margin-left: 4px;
     }
-    & .jumbotron-button {
-        position: absolute;
-        top: 50%;
-        border-radius: $border-radious-60;
-        background: $main-bg-color-alpha;
-        &.right {
-            right: 0;
-        }
-        &.left {
-            left: 0;
-        }
+  }
+  &.info {
+    background-color: $main-text-color-alpha;
+    color: $main-text-color;
+    & > svg {
+      margin-top: -1px;
+      margin-left: 2px;
     }
+  }
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+
+  & .carousel-root .carousel {
+    border-bottom-right-radius: $border-radius-30;
+    border-bottom-left-radius: $border-radius-30;
+  }
+
+  & .carousel-body {
+    margin-top: 7px;
+    gap: 15px;
+    & .logo {
+      width: 80%;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & .inner-text {
+      font-size: 14px;
+    }
+  }
+
+  & .carousel-header {
+    overflow: hidden;
+    max-height: 650px;
+    min-height: 650px;
+  }
+
+  & .carousel-indicator {
+    height: 10px;
+    width: 10px;
+    background-color: $alternative-bg-color;
+    border-radius: 60px;
+    transition: 0.3s ease-in-out;
+    &.selected {
+      background-color: $main-text-color;
+      width: 30px;
+    }
+  }
+
+  & .carousel-image {
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  & .carousel-button {
+    display: flex;
+    width: 44px;
+    height: 100%;
+    z-index: 250;
+    & > div {
+      border-radius: $border-radius-60;
+      background: $main-bg-color-alpha;
+      backdrop-filter: blur($background-blur);
+      width: 44px;
+      height: 44px;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    &:disabled {
+      opacity: 0 !important;
+    }
+    &.right {
+      right: 0;
+      padding-right: 5px !important;
+    }
+    &.left {
+      left: 0;
+      padding-right: 0 !important;
+      padding-left: 5px !important;
+    }
+  }
 }

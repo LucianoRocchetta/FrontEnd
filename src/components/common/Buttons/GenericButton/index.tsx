@@ -1,15 +1,24 @@
-import React, { CSSProperties } from "react";
+import React from "react";
+import { IoInformation, IoPlay } from "react-icons/io5";
 import { GenericButtonProps } from "../../../../shared/types";
 
-export const GenericButton = ({
-    children,
-    onClick,
-    className,
-    style,
-}: GenericButtonProps) => {
-    return (
-        <button onClick={onClick} className={className} style={style}>
-            {children}
+export const GenericButton = (props: GenericButtonProps) => {
+  const { preset, children, ...params } = props;
+
+  switch (preset) {
+    case "play_button":
+      return (
+        <button {...params} className="preset-button play">
+          <IoPlay color="#1C1C1C" />
         </button>
-    );
+      );
+    case "info_button":
+      return (
+        <button {...params} className="preset-button info">
+          <IoInformation color="white" />
+        </button>
+      );
+    default:
+      return <button {...params}>{children}</button>;
+  }
 };

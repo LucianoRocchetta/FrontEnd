@@ -1,3 +1,3 @@
 export * from "./Navbar";
 export * from "./Body";
-export * from "./Jumbotron";
+export * from "./Carousel";
