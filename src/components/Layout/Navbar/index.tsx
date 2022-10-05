@@ -1,26 +1,46 @@
-import React from "react";
-import { NavbarProps } from "../../../shared/types";
-import { IoSearch, IoPerson } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import "./navbar.css";
+import React, { useEffect, useState } from "react";
+import { NavbarProps, OptionsProps } from "../../../shared/types";
+import { IoSearch, IoPersonCircleSharp } from "react-icons/io5";
+import NavItem from "./Components/NavItem";
 
-export const Navbar = ({ currentScreen }: any) => {
-  //SCREENS
-  const { HOME, GENRES, MYLIST } = currentScreen;
+export const Navbar = () => {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const OpenMenu = () => setIsOpenMenu(!isOpenMenu);
+  const options: OptionsProps[] = [
+    { label: "HOME", link: "/", style: { fontWeight: "bold" } },
+    { label: "GENRES", link: "/genres" },
+    { label: "MYLIST", link: "/my-list", style: { color: "red" } },
+  ];
+  useEffect(() => {
+    document.body.addEventListener("scroll", () => {});
+    return () => {};
+  }, []);
 
   return (
-    <header>
-      <nav>
-        <Link id="current-link" to={HOME}>
-          Home
-        </Link>
-        <Link to={GENRES}>Genres</Link>
-        <Link to={MYLIST}>My List</Link>
+    <header className="navbar-content">
+      <a className="navbar-logo">
+        <IoPersonCircleSharp className="navbar-icon" />
+      </a>
+      <nav className="navbar-options">
+        <div className="navbar-profile">
+          <IoSearch className="navbar-icon" />
+          <IoPersonCircleSharp className="navbar-icon" onClick={OpenMenu} />
+        </div>
+        <ul className={`nav-items-list${isOpenMenu ? " active" : ""}`}>
+          {options.map((prop, i) => {
+            return (
+              <li key={i}>
+                <NavItem
+                  link={prop.link}
+                  label={prop.label}
+                  className="nav-item"
+                  style={prop.style}
+                />
+              </li>
+            );
+          })}
+        </ul>
       </nav>
-      <div className="navbar-icons">
-        <IoSearch />
-        <IoPerson className="icon-background" />
-      </div>
     </header>
   );
 };
