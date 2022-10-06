@@ -1,5 +1,5 @@
 import React from "react";
-import { CarouselComponent, Navbar } from "../../components/Layout";
+import { CarouselComponent, Navbar, Body } from "../../components/Layout";
 import { ScreenNames } from "../../shared/types";
 
 export const Home = () => {
@@ -7,7 +7,9 @@ export const Home = () => {
     <section className="app-container">
       <Navbar currentScreen={ScreenNames} />
       <CarouselComponent />
-      <main className=""></main>
+      <main className="">
+        <Body/>
+      </main>
     </section>
   );
 };

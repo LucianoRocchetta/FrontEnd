@@ -46,6 +46,20 @@ export interface ArrowButtonProps {
     clickHandler: () => void;
     direction: "prev" | "next";
 }
+
+
+export interface MoviesGridProps {
+  movies: {
+    category: string;
+    images: Array<string>;
+  };
+}
+
+export interface CardProps {
+    img: string;
+}
+
+
 // TYPES
 export enum ScreenNames {
     HOME = "Home",
