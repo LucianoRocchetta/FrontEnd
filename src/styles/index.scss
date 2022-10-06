@@ -5,7 +5,10 @@ button {
   border: 0;
   background: $main-text-color;
 }
-
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
 html,
 body,
 #root {
@@ -251,3 +254,107 @@ body,
       z-index: 1;
   }
 }
+// NAVBAR CONFIGS
+.navbar-content {
+  background: $main-bg-color-alpha;
+  /* backdrop-filter: blur($background-blur); */
+  min-height: 80px;
+  max-height: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1;
+}
+.navbar-logo {
+  width: 10vw;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+}
+.navbar-options {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  & .nav-items-list {
+    background: $main-bg-color-alpha;
+    backdrop-filter: blur($background-blur);
+    margin: 0;
+    padding: 1em 0 0;
+    left: -100%;
+    width: 100%;
+    top: 80px;
+    transition: all 0.5s ease;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &.active {
+      width: 60%;
+      left: 0;
+      top: 80px;
+    }
+    & .nav-item {
+      padding: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.75rem;
+    }
+  }
+  & .navbar-profile {
+    display: inline-flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+  }
+}
+.navbar-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/*
+@media only screen and (min-width: 500px) {
+
+// NAVBAR CONFIGS
+    .navbar-content {
+        background-color: rgb(20, 20, 20);
+        width: 100vw;
+        height: 60px;
+        display: inline-flex;
+        align-items: center;
+    }
+    .navbar-logo {
+        width: 10vw;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+    }
+    .navbar-options {
+        width: 90vw;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        & .nav-items-list {
+            display: inline-flex;
+            & .nav-item {
+                padding: 0 10px;
+                text-decoration: none;
+                color: #fff;
+                font-size: 0.75rem;
+            }
+        }
+        & .navbar-profile {
+            display: inline-flex;
+            width: 10vw;
+            justify-content: space-evenly;
+            cursor: pointer;
+        }
+    }
+    .navbar-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+*/
