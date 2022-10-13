@@ -23,15 +23,14 @@ export const Body = () => {
         "https://image.tmdb.org/t/p/original/qJIggHPX3uil110CjO8ITPpYroH.jpg",
         "https://wwwimage-us.pplusstatic.com/thumbnails/photos/w370-q80/movie_asset/92/68/77/PPL_SAlone_Poster_1400x2100_.jpg",
         "https://es.web.img3.acsta.net/medias/nmedia/18/95/76/36/20426888.jpg",
-        "https://play-lh.googleusercontent.com/0ajUa-474t1aRsGY2Z791IcXimECPsZOwp6WpdbcTdnbnnj13tgbB_nivUq9j8JNVknz",
       ],
     },
   ]);
   return (
-    <div>
+    <section>
       {categories.map((data, i) => (
         <MoviesGrid movies={data} key={i} />
       ))}
-    </div>
+    </section>
   );
 };

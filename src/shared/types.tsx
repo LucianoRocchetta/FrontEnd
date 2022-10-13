@@ -16,6 +16,9 @@ export interface ReprocessData {
 }
 
 // COMPONENTS PROPS
+export interface LayoutProps {
+  children?: any;
+}
 export interface NavbarProps {
   currentScreen: ScreenNames;
 }

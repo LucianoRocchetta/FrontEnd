@@ -3,21 +3,51 @@ import { NavbarProps, OptionsProps } from "../../../shared/types";
 import { IoSearch, IoPersonCircleSharp } from "react-icons/io5";
 import NavItem from "./Components/NavItem";
 
+const options: OptionsProps[] = [
+  { label: "HOME", link: "/", style: { fontWeight: "bold" } },
+  { label: "GENRES", link: "/genres" },
+  { label: "MYLIST", link: "/my-list", style: { color: "red" } },
+];
+
 export const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [show, setShow] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrollbarOverflow, setIsScrollbarOverflow] = useState(false);
+
   const OpenMenu = () => setIsOpenMenu(!isOpenMenu);
-  const options: OptionsProps[] = [
-    { label: "HOME", link: "/", style: { fontWeight: "bold" } },
-    { label: "GENRES", link: "/genres" },
-    { label: "MYLIST", link: "/my-list", style: { color: "red" } },
-  ];
+
+  const controlNavbar = () => {
+    const documentScroll = document.querySelector("#root")!.scrollTop;
+    if (documentScroll > 100) {
+      setIsScrollbarOverflow(true);
+      if (documentScroll > lastScrollY) {
+        setShow(true);
+      } else {
+        setShow(false);
+        setIsOpenMenu(false);
+      }
+    } else {
+      setIsScrollbarOverflow(false);
+    }
+    setLastScrollY(documentScroll);
+  };
+
   useEffect(() => {
-    document.body.addEventListener("scroll", () => {});
-    return () => {};
-  }, []);
+    document.querySelector("#root")!.addEventListener("scroll", controlNavbar);
+    return () => {
+      document
+        .querySelector("#root")!
+        .addEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
 
   return (
-    <header className="navbar-content">
+    <header
+      className={`navbar-content ${show ? "hidden" : "sticky"} ${
+        isScrollbarOverflow ? "blur" : ""
+      }`}
+    >
       <a className="navbar-logo">
         <IoPersonCircleSharp className="navbar-icon" />
       </a>

@@ -1,15 +1,14 @@
-import React from "react";
-import { CarouselComponent, Navbar, Body } from "../../components/Layout";
+import React, { Fragment } from "react";
+import { Body } from "../../components/Layout/Body";
+import { CarouselComponent } from "../../components/Layout/Carousel";
+import { Navbar } from "../../components/Layout/Navbar";
 import { ScreenNames } from "../../shared/types";
 
 export const Home = () => {
   return (
-    <section className="app-container">
-      <Navbar currentScreen={ScreenNames} />
+    <Fragment>
       <CarouselComponent />
-      <main className="">
-        <Body/>
-      </main>
-    </section>
+      <Body />
+    </Fragment>
   );
 };
