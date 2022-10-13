@@ -51,14 +51,14 @@ export interface ArrowButtonProps {
 }
 
 export interface MoviesGridProps {
-  movies: {
-    category: string;
-    images: Array<string>;
-  };
+  category: string;
+  images: Array<string>;
+  type: string;
 }
 
 export interface CardProps {
   img: string;
+  to: string;
 }
 
 // TYPES

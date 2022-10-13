@@ -5,7 +5,8 @@ import { MoviesGrid } from "./components/MovieGrid";
 export const Body = () => {
   const [categories, setCategories] = useState([
     {
-      category: "action",
+      category: "New Releases",
+      type: "big",
       images: [
         "https://es.web.img3.acsta.net/pictures/14/04/03/11/50/177802.jpg",
         "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/16cef68ee7d9d816d9f943b2d862a1533da95b4049665ec234e6363ca4863d9b._RI_V_TTW_.jpg",
@@ -16,7 +17,8 @@ export const Body = () => {
       ],
     },
     {
-      category: "comedy",
+      category: "What's next",
+      type: "normal",
       images: [
         "https://www.apollocinemas.nb.ca/uploads/movie/image/1085/the-woman-king-163636.jpg",
         "https://www.laguiadelvaron.com/wp-content/uploads/2019/07/portadas-pel%C3%ADculas-iguales-www.laguiadelvaron-15.jpg",
@@ -26,10 +28,16 @@ export const Body = () => {
       ],
     },
   ]);
+
   return (
     <section>
       {categories.map((data, i) => (
-        <MoviesGrid movies={data} key={i} />
+        <MoviesGrid
+          category={data.category}
+          images={data.images}
+          type={data.type}
+          key={i}
+        />
       ))}
     </section>
   );
