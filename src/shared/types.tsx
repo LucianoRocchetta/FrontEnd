@@ -36,6 +36,7 @@ export interface NavItemProps {
   style?: CSSProperties;
   link: string;
   label: string;
+  onClick?: (e: any) => void;
 }
 export interface OptionsProps {
   style?: CSSProperties;
