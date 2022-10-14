@@ -41,22 +41,24 @@ export const Navbar = () => {
         .addEventListener("scroll", controlNavbar);
     };
   }, [lastScrollY]);
-
   return (
-    <header
-      className={`navbar-content ${show ? "hidden" : "sticky"} ${
-        isScrollbarOverflow ? "blur" : ""
-      }`}
-    >
-      <a className="navbar-logo">
-        <IoPersonCircleSharp className="navbar-icon" />
-      </a>
-      <nav className="navbar-options">
+    <header>
+      <div
+        className={`navbar-content ${show ? "hidden" : "sticky"} ${
+          isScrollbarOverflow ? (!isOpenMenu ? "blur" : "") : ""
+        }`}
+      >
+        <a className="navbar-logo">
+          <IoPersonCircleSharp className="navbar-icon" />
+        </a>
+
         <div className="navbar-profile">
           <IoSearch className="navbar-icon" />
           <IoPersonCircleSharp className="navbar-icon" onClick={OpenMenu} />
         </div>
-        <ul className={`nav-items-list${isOpenMenu ? " active" : ""}`}>
+      </div>
+      <nav className="navbar-options">
+        <ul className={`nav-items-list${isOpenMenu ? " active" : ""} `}>
           {options.map((prop, i) => {
             return (
               <li key={i}>
@@ -65,6 +67,7 @@ export const Navbar = () => {
                   label={prop.label}
                   className="nav-item"
                   style={prop.style}
+                  onClick={OpenMenu}
                 />
               </li>
             );
