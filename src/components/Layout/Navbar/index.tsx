@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavbarProps, OptionsProps } from "../../../shared/types";
+import { OptionsProps } from "../../../shared/types";
 import { IoSearch, IoPersonCircleSharp } from "react-icons/io5";
 import NavItem from "./Components/NavItem";
 
@@ -18,7 +18,7 @@ export const Navbar = () => {
   const OpenMenu = () => setIsOpenMenu(!isOpenMenu);
 
   const controlNavbar = () => {
-    const documentScroll = document.querySelector("#root")!.scrollTop;
+    const documentScroll = document.querySelector(".app-container")!.scrollTop;
     if (documentScroll > 100) {
       setIsScrollbarOverflow(true);
       if (documentScroll > lastScrollY) {
@@ -34,10 +34,12 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    document.querySelector("#root")!.addEventListener("scroll", controlNavbar);
+    document
+      .querySelector(".app-container")!
+      .addEventListener("scroll", controlNavbar);
     return () => {
       document
-        .querySelector("#root")!
+        .querySelector(".app-container")!
         .addEventListener("scroll", controlNavbar);
     };
   }, [lastScrollY]);

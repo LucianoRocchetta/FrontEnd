@@ -1,17 +1,12 @@
-import { useState } from "react";
-import { Card } from "../../../../common";
+import React from "react";
 import { MoviesGridProps } from "../../../../../shared/types";
+import { CardsCarousel } from "../../../../common/CardsCarousel";
 
-export const MoviesGrid = ({ category, images, type }: MoviesGridProps) => {
-  const [movies, setMovies] = useState(images);
+export const MoviesGrid = ({ category, movies, type }: MoviesGridProps) => {
   return (
     <div className={`movies-grid ${type}`}>
       <h2>{category}</h2>
-      <div className="grid-container">
-        {movies.map((movie, i) => (
-          <Card to="/movie_info" img={movie} key={i} />
-        ))}
-      </div>
+      <CardsCarousel cards={movies} />
     </div>
   );
 };
