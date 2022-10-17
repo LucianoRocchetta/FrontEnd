@@ -53,13 +53,23 @@ export interface ArrowButtonProps {
 
 export interface MoviesGridProps {
   category: string;
-  images: Array<string>;
+  movies: CardProps[];
   type: string;
 }
 
+export interface CardCarouselProps {
+  cards: CardProps[];
+  cardClassName?: string;
+  cardStyles?: CSSProperties;
+  className?: string;
+}
+
 export interface CardProps {
-  img: string;
-  to: string;
+  backgroundImage: string;
+  to?: string;
+  video?: any;
+  title?: string;
+  type?: "stretch" | "wide";
 }
 
 // TYPES
