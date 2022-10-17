@@ -1,5 +1,5 @@
 import React from "react";
-import { IoInformation, IoPlay } from "react-icons/io5";
+import { IoInformation, IoPlay, IoAddCircle } from "react-icons/io5";
 import { GenericButtonProps } from "../../../../shared/types";
 
 export const GenericButton = (props: GenericButtonProps) => {
@@ -16,6 +16,12 @@ export const GenericButton = (props: GenericButtonProps) => {
       return (
         <button {...params} className="preset-button info">
           <IoInformation color="white" />
+        </button>
+      );
+    case "add_button":
+      return (
+        <button {...params} className="preset-button add">
+          <IoAddCircle color="white" />
         </button>
       );
     default:
