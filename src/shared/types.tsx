@@ -23,7 +23,7 @@ export interface NavbarProps {
   currentScreen: ScreenNames;
 }
 export interface GenericButtonProps {
-  preset?: "play_button" | "info_button";
+  preset?: "play_button" | "info_button" | "add_button";
   disabled?: boolean;
   children?: any;
   onClick?: (e: any) => void;

@@ -9,7 +9,7 @@ export const MoviesGrid = ({ category, images, type }: MoviesGridProps) => {
       <h2>{category}</h2>
       <div className="grid-container">
         {movies.map((movie, i) => (
-          <Card to="" img={movie} key={i} />
+          <Card to="/movie_info" img={movie} key={i} />
         ))}
       </div>
     </div>

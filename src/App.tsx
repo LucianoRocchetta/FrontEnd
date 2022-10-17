@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles/index.scss";
-import { Home } from "./pages";
+import { Home, Movie } from "./pages";
 import { Layout } from "./components/Layout";
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/movie_info" element = {<Movie />} />
         </Routes>
       </Layout>
     </BrowserRouter>
