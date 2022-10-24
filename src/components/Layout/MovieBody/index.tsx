@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GenericButton } from "../../common";
+import { MovieInfoCard } from "./components";
 
 export const MovieBody = () => {
   const [movieInfo, setMovieInfo] = useState({
@@ -40,12 +41,12 @@ export const MovieBody = () => {
         <GenericButton preset="add_button" onClick={() => {}}/>
       </div>
 
-      <h3>{movieInfo.movieDescription}</h3>
+      <p>{movieInfo.movieDescription}</p>
 
       {movieInfo.type == "movie" ? (
         <div className="movie-images">
           {movieInfo.movieImages.map((image, i) => (
-            <img key={i} alt={image} src={image} />
+            <MovieInfoCard key = {i} to = {''} backgroundImage = {image} />
           ))}
         </div>
       ) : (
