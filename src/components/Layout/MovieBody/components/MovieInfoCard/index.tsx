@@ -3,8 +3,8 @@ import { MovieInfoCardProps } from "../../../../../shared/types"
 
 export const MovieInfoCard = ({to, backgroundImage}:MovieInfoCardProps) => {
     return (
-        <Link to = {to}>
-            <img src = {backgroundImage} />
+        <Link to = ''>
+            <img src = {backgroundImage} alt = {backgroundImage}/>
         </Link>
     )
 }
