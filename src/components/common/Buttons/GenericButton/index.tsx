@@ -21,7 +21,7 @@ export const GenericButton = (props: GenericButtonProps) => {
     case "add_button":
       return (
         <button {...params} className="preset-button add">
-          <IoAddCircle color="white" />
+          <IoAddCircle  />
         </button>
       );
     default:

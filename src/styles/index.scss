@@ -167,6 +167,7 @@ body {
   }
   &.add {
     background-color: $main-text-color-alpha;
+    color: $main-text-color-alpha;
   }
 }
 
@@ -443,8 +444,8 @@ body {
 
 //MOVIE_INFO CONFIGS
 .movie-body {
-  & h3 {
-    margin-top: 5%;
+  & p {
+    margin-top: 2rem;
     font-size: 1rem;
     font-weight: 300;
   }
@@ -468,34 +469,34 @@ body {
     .movie-cover-logo {
       position: absolute;
       width: 30%;
-      margin-bottom: 5%;
+      margin-bottom: 2rem;
     }
   }
 
   .movie-params {
-    margin-top: 5%;
+    margin-top: 2rem;
     justify-content: center;
 
     & span {
       background-color: $alternative-bg-color;
       backdrop-filter: blur($background-blur);
-      margin-right: 2%;
-      padding: 0.5rem;
+      margin-right: 1rem;
+      padding: 0.3rem 1rem;
       border-radius: $border-radius-24;
     }
   }
 
   .controls {
-    margin-top: 10%;
+    margin-top: 2rem;
     justify-content: center;
 
     & button {
-      margin-right: 2%;
+      margin-right: 0.5rem;
     }
   }
 
   .movie-images {
-    margin-top: 5%;
+    margin-top: 2rem;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);

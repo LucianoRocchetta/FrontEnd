@@ -72,6 +72,11 @@ export interface CardProps {
   type?: "stretch" | "wide";
 }
 
+export interface MovieInfoCardProps {
+  backgroundImage: string;
+  to?: string;
+}
+
 // TYPES
 export enum ScreenNames {
   HOME = "Home",
