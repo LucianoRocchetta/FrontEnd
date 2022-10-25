@@ -87,6 +87,7 @@ export const Body = () => {
           category={data.category}
           movies={data.movies}
           type={data.type}
+          id={`movies-carousel-${i}`}
           key={i}
         />
       ))}
