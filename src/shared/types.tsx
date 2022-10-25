@@ -52,12 +52,14 @@ export interface ArrowButtonProps {
 }
 
 export interface MoviesGridProps {
+  id: string;
   category: string;
   movies: CardProps[];
   type: string;
 }
 
 export interface CardCarouselProps {
+  id: string;
   cards: CardProps[];
   cardClassName?: string;
   cardStyles?: CSSProperties;
