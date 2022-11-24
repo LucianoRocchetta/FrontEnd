@@ -1,13 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
-import { Home } from "./pages";
+import "./styles/index.scss";
+import { Home, Movie } from "./pages";
+import { Layout } from "./components/Layout";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie_info" element = {<Movie />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 }

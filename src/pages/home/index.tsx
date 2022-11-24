@@ -1,13 +1,12 @@
-import React from "react";
-import { Jumbotron, Navbar } from "../../components/Layout";
-import { ScreenNames } from "../../shared/types";
+import React, { Fragment } from "react";
+import { Body } from "../../components/Layout/Body";
+import { CarouselComponent } from "../../components/Layout/Carousel";
 
 export const Home = () => {
   return (
-    <section className="app-container">
-      <Navbar currentScreen={ScreenNames.HOME} />
-      <Jumbotron />
-      <main className=""></main>
-    </section>
+    <Fragment>
+      <CarouselComponent />
+      <Body />
+    </Fragment>
   );
 };
